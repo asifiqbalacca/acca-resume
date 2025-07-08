@@ -9,7 +9,7 @@ const Education = () => {
       institution: "Association of Chartered Certified Accountants",
       period: "2023 - Present",
       status: "In Progress",
-      description: "Currently pursuing professional accounting qualification with focus on audit, taxation, financial management, and corporate reporting.",
+      description: "Currently pursuing the Applied Skills level of the ACCA certificate, focusing on advanced knowledge in areas such as Financial Management, Performance Management, Audit & Assurance, and Taxation. Meeting global accounting and financial standards by improving analytical, reporting, and decision-making skills. Continuously learning and pursuing ACCA membership.",
       subjects: ["Financial Reporting", "Audit & Assurance", "Taxation", "Financial Management", "Corporate Law"],
       progress: "11/17 papers completed"
     },
