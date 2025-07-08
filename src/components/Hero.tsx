@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Mail, Download, Linkedin, Github } from "lucide-react";
 import heroBackground from "../assets/hero-bg.jpg";
+import profilePicture from "../assets/profile-picture.jpg";
 
 const Hero = () => {
   return (
@@ -16,6 +17,14 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 animate-fade-in">
         <div className="max-w-4xl mx-auto">
+          {/* Profile Picture */}
+          <div className="mb-8">
+            <img 
+              src={profilePicture} 
+              alt="Md Asif Iqbal - ACCA Student"
+              className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto shadow-hover border-4 border-white/20 object-cover"
+            />
+          </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             Md Asif Iqbal
           </h1>
