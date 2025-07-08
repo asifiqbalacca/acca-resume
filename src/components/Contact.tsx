@@ -9,26 +9,26 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com"
+      value: "acca.asifiqbal@gmail.com",
+      link: "mailto:acca.asifiqbal@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+88 01325409636",
+      link: "tel:+8801325409636"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Your City, Country",
+      value: "Dhanmondi 8/A, Dhaka, Bangladesh",
       link: "#"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
-      link: "https://linkedin.com/in/yourprofile"
+      value: "linkedin.com/in/asifiqbal-acca",
+      link: "https://www.linkedin.com/in/asifiqbal-acca/"
     }
   ];
 
@@ -88,7 +88,7 @@ const Contact = () => {
                   size="lg"
                   asChild
                 >
-                  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/asifiqbal-acca" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-2 h-5 w-5" />
                     Connect on LinkedIn
                   </a>
