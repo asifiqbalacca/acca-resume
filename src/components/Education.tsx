@@ -7,20 +7,20 @@ const Education = () => {
     {
       degree: "ACCA Qualification",
       institution: "Association of Chartered Certified Accountants",
-      period: "2023 - Present",
+      period: "2018 - Present",
       status: "In Progress",
       description: "Currently pursuing the Applied Skills level of the ACCA certificate, focusing on advanced knowledge in areas such as Financial Management, Performance Management, Audit & Assurance, and Taxation. Meeting global accounting and financial standards by improving analytical, reporting, and decision-making skills. Continuously learning and pursuing ACCA membership.",
       subjects: ["Financial Reporting", "Audit & Assurance", "Taxation", "Financial Management", "Corporate Law"],
       progress: "11/17 papers completed"
     },
     {
-      degree: "Bachelor of Commerce (Accounting)",
+      degree: "Higher Secondary Certificate",
       institution: "Your University Name",
-      period: "2020 - 2023",
+      period: "April 2014 - April 2016",
       status: "Completed",
-      description: "Comprehensive undergraduate program covering fundamental accounting principles, business law, economics, and financial analysis.",
+      description: "Successfully finished HSC with a specialization in Business Studies.  Gained extensive knowledge in core subjects including Accounting, Management, and Finance.  This academic path helped develop a solid platform for future education in the field of business and professional certificates like ACCA.",
       subjects: ["Financial Accounting", "Management Accounting", "Business Law", "Economics", "Statistics"],
-      grade: "First Class Honours (3.8/4.0 GPA)"
+      grade: "GPA (3.25/4.0)"
     }
   ];
 
