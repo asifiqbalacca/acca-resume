@@ -32,6 +32,7 @@ const Skills = () => {
   ];
 
   const certifications = [
+    "Foundation in Accountancy (FIA) - Complete",
     "ACCA Applied Knowledge (F1-F3) Completed",
     "ACCA Applied Skills (F4-F9) - 4/6 Completed", 
     "Microsoft Excel Specialist",
