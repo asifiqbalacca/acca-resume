@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-6 animate-fade-in">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Your Name
+            Md Asif Iqbal
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-primary-foreground/90">
             ACCA Student & Aspiring Finance Professional

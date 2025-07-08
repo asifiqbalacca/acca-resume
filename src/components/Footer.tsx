@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Your Name</h3>
+            <h3 className="text-2xl font-bold">Md Asif Iqbal</h3>
             <p className="text-primary-foreground/80 leading-relaxed">
               ACCA Student passionate about accounting and finance, 
               ready to contribute to your organization's success.
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} Md Asif Iqbal. All rights reserved.
             </p>
             
             <div className="flex items-center gap-2 text-primary-foreground/60 text-sm">

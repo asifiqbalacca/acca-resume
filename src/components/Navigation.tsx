@@ -43,7 +43,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="font-bold text-xl text-primary">
-            Your Name
+            Md Asif Iqbal
           </div>
 
           {/* Desktop Navigation */}
