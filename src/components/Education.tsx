@@ -11,7 +11,7 @@ const Education = () => {
       status: "In Progress",
       description: "Currently pursuing professional accounting qualification with focus on audit, taxation, financial management, and corporate reporting.",
       subjects: ["Financial Reporting", "Audit & Assurance", "Taxation", "Financial Management", "Corporate Law"],
-      progress: "7/13 papers completed"
+      progress: "11/17 papers completed"
     },
     {
       degree: "Bachelor of Commerce (Accounting)",
