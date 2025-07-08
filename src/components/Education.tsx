@@ -29,7 +29,7 @@ const Education = () => {
       status: "Completed",
       description: "Successfully finished HSC with a specialization in Business Studies.  Gained extensive knowledge in core subjects including Accounting, Management, and Finance.  This academic path helped develop a solid platform for future education in the field of business and professional certificates like ACCA.",
       subjects: ["Financial Accounting", "Management Accounting", "Business Law", "Economics", "Statistics"],
-      grade: "GPA (3.25/4.0)"
+      grade: "GPA (4/4.0)"
     }
   ];
 
