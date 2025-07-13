@@ -1,24 +1,1890 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Md Asif Iqbal | ACCA Student</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <meta name="description" content="ACCA Student & Aspiring Finance Professional" />
+    <meta name="author" content="Md Asif Iqbal" />
 
     <meta property="og:title" content="Md Asif Iqbal | ACCA Student" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:description" content="ACCA Student & Aspiring Finance Professional" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        :root {
+            /* Colors (HSL format) */
+            --background: hsl(255, 100%, 99%);
+            --foreground: hsl(215, 25%, 15%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(215, 25%, 15%);
+            --primary: hsl(220, 60%, 25%);
+            --primary-foreground: hsl(0, 0%, 98%);
+            --primary-glow: hsl(220, 60%, 35%);
+            --secondary: hsl(220, 15%, 95%);
+            --secondary-foreground: hsl(215, 25%, 15%);
+            --muted: hsl(220, 15%, 96%);
+            --muted-foreground: hsl(215, 15%, 50%);
+            --accent: hsl(220, 60%, 92%);
+            --accent-foreground: hsl(220, 60%, 25%);
+            --border: hsl(220, 15%, 88%);
+            --destructive: hsl(0, 84.2%, 60.2%);
+            --destructive-foreground: hsl(210, 40%, 98%);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, hsl(220, 60%, 25%), hsl(220, 60%, 35%));
+            --gradient-hero: linear-gradient(135deg, hsl(220, 60%, 25%) 0%, hsl(220, 60%, 35%) 100%);
+            --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(220, 15%, 98%) 100%);
+            
+            /* Shadows */
+            --shadow-card: 0 4px 20px -2px hsla(220, 60%, 25%, 0.08);
+            --shadow-hover: 0 8px 30px -4px hsla(220, 60%, 25%, 0.15);
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: hsl(222.2, 84%, 4.9%);
+                --foreground: hsl(210, 40%, 98%);
+                --card: hsl(222.2, 84%, 4.9%);
+                --card-foreground: hsl(210, 40%, 98%);
+                --primary: hsl(210, 40%, 98%);
+                --primary-foreground: hsl(222.2, 47.4%, 11.2%);
+                --secondary: hsl(217.2, 32.6%, 17.5%);
+                --secondary-foreground: hsl(210, 40%, 98%);
+                --muted: hsl(217.2, 32.6%, 17.5%);
+                --muted-foreground: hsl(215, 20.2%, 65.1%);
+                --accent: hsl(217.2, 32.6%, 17.5%);
+                --accent-foreground: hsl(210, 40%, 98%);
+                --border: hsl(217.2, 32.6%, 17.5%);
+            }
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: var(--transition-smooth);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: hsla(255, 100%, 99%, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            color: var(--foreground);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 1px solid transparent;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--primary-foreground);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-glow);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--foreground);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+        }
+
+        .btn-lg {
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--foreground);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            background: hsla(255, 100%, 99%, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            color: var(--foreground);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--primary);
+            background: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: url('./src/assets/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0.85;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .profile-picture {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-hover);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .profile-picture {
+                width: 12rem;
+                height: 12rem;
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @media (min-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .hero .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero .btn-white:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero .btn-outline-white {
+            border: 1px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .hero .btn-outline-white:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition-smooth);
+            padding: 0.5rem;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        .scroll-indicator .line {
+            width: 0.25rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 9999px;
+            margin: 0 auto 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-bg-muted {
+            background: var(--muted);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--gradient-card);
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 1rem;
+        }
+
+        .card-content {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .grid-md-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-lg-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Education Section */
+        .education-list {
+            max-width: 64rem;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .education-header {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-icon {
+            background: var(--gradient-primary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .education-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-info p {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            font-weight: 500;
+        }
+
+        .education-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .badge-default {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .badge-secondary {
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+        }
+
+        .badge-outline {
+            border: 1px solid var(--border);
+            color: var(--foreground);
+            background: transparent;
+        }
+
+        .subjects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .highlight-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--accent);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            max-width: 96rem;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .skill-percentage {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 0.5rem;
+            background: var(--secondary);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            transition: width 1s ease-out;
+            border-radius: 9999px;
+        }
+
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .soft-skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--accent);
+            border-radius: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .soft-skill-item:hover {
+            background: var(--accent);
+            opacity: 0.8;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            max-width: 96rem;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            background: var(--gradient-primary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.1);
+        }
+
+        .project-highlights {
+            margin: 1.5rem 0;
+        }
+
+        .project-highlights h4 {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .highlight-dot {
+            width: 0.375rem;
+            height: 0.375rem;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            max-width: 96rem;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--accent);
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            background: var(--accent);
+            opacity: 0.8;
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            background: var(--gradient-primary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: var(--transition-smooth);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-details h4 {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .contact-details p {
+            color: var(--muted-foreground);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--gradient-card);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.375rem;
+            background: var(--background);
+            color: var(--foreground);
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px hsla(220, 60%, 25%, 0.2);
+        }
+
+        .form-textarea {
+            resize: none;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-link {
+            display: block;
+            color: hsla(0, 0%, 98%, 0.8);
+            text-decoration: none;
+            padding: 0.25rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-foreground);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid hsla(0, 0%, 98%, 0.2);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.875rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: hsla(0, 0%, 98%, 0.6);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-foreground);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -6px, 0);
+            }
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -3px, 0);
+            }
+            90% {
+                transform: translate3d(0,-1px,0);
+            }
+        }
+
+        /* Icon styles */
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .icon-sm {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .icon-lg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        .font-bold { font-weight: bold; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .w-full { width: 100%; }
+        .max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-4 { gap: 1rem; }
+        .hidden { display: none; }
+
+        @media (min-width: 768px) {
+            .md-flex { display: flex; }
+            .md-hidden { display: none; }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">Md Asif Iqbal</div>
+                
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="md-flex hidden">
+                    <a href="#" class="btn btn-primary">
+                        📄 Download CV
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span id="menu-icon">☰</span>
+                </button>
+            </div>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#education" class="mobile-nav-link">Education</a>
+                <a href="#skills" class="mobile-nav-link">Skills</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <div style="padding: 0 1rem; margin-top: 0.5rem;">
+                    <a href="#" class="btn btn-primary w-full">
+                        📄 Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="max-w-4xl">
+                <div style="margin-bottom: 2rem;">
+                    <img src="./src/assets/profile-picture.jpg" alt="Md Asif Iqbal - ACCA Student" class="profile-picture">
+                </div>
+                <h1>Md Asif Iqbal</h1>
+                <h2>ACCA Student & Aspiring Finance Professional</h2>
+                <p>
+                    Passionate about accounting and finance with strong analytical skills. 
+                    Currently pursuing ACCA qualification with a focus on audit, taxation, 
+                    and financial management.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-white btn-lg">
+                        📥 Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-outline-white btn-lg">
+                        ✉️ Contact Me
+                    </a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                    <a href="#" class="social-link" aria-label="GitHub">🔗</a>
+                    <a href="#" class="social-link" aria-label="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="line"></div>
+            <span style="font-size: 0.875rem;">Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-bg-muted">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education & Qualifications</h2>
+                <p class="section-description">
+                    My academic journey and professional development in accounting and finance
+                </p>
+            </div>
+
+            <div class="education-list">
+                <!-- ACCA Qualification -->
+                <div class="card education-item">
+                    <div class="card-header">
+                        <div class="education-header">
+                            <div class="flex items-center">
+                                <div class="education-icon">
+                                    🎓
+                                </div>
+                                <div class="education-info">
+                                    <h3>ACCA Qualification</h3>
+                                    <p>Association of Chartered Certified Accountants</p>
+                                </div>
+                            </div>
+                            <div class="education-meta">
+                                <span class="badge badge-secondary">In Progress</span>
+                                <div class="flex items-center" style="color: var(--muted-foreground); margin-top: 0.5rem;">
+                                    📅 2018 - Present
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Currently pursuing the Applied Skills level of the ACCA certificate, focusing on advanced knowledge in areas such as Financial Management, Performance Management, Audit & Assurance, and Taxation. Meeting global accounting and financial standards by improving analytical, reporting, and decision-making skills. Continuously learning and pursuing ACCA membership.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            🏆 <span style="font-weight: 500; color: var(--primary);">Progress: 11/17 papers completed</span>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Key Subjects</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline">Financial Reporting</span>
+                                <span class="badge badge-outline">Audit & Assurance</span>
+                                <span class="badge badge-outline">Taxation</span>
+                                <span class="badge badge-outline">Financial Management</span>
+                                <span class="badge badge-outline">Corporate Law</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HSC -->
+                <div class="card education-item">
+                    <div class="card-header">
+                        <div class="education-header">
+                            <div class="flex items-center">
+                                <div class="education-icon">
+                                    🎓
+                                </div>
+                                <div class="education-info">
+                                    <h3>Higher Secondary Certificate</h3>
+                                    <p>Cumilla Victoria Government College</p>
+                                </div>
+                            </div>
+                            <div class="education-meta">
+                                <span class="badge badge-default">Completed</span>
+                                <div class="flex items-center" style="color: var(--muted-foreground); margin-top: 0.5rem;">
+                                    📅 Apr 2014 - Apr 2016
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Successfully finished HSC with a specialization in Business Studies. Gained extensive knowledge in core subjects including Accounting, Management, and Finance. This academic path helped develop a solid platform for future education in the field of business and professional certificates like ACCA.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            🏆 <span style="font-weight: 500; color: var(--primary);">Achievement: GPA (3.25/4.0)</span>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Key Subjects</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline">Financial Accounting</span>
+                                <span class="badge badge-outline">Management Accounting</span>
+                                <span class="badge badge-outline">Business Law</span>
+                                <span class="badge badge-outline">Economics</span>
+                                <span class="badge badge-outline">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SSC -->
+                <div class="card education-item">
+                    <div class="card-header">
+                        <div class="education-header">
+                            <div class="flex items-center">
+                                <div class="education-icon">
+                                    🎓
+                                </div>
+                                <div class="education-info">
+                                    <h3>Secondary School Certificate</h3>
+                                    <p>Cumilla Modern high school</p>
+                                </div>
+                            </div>
+                            <div class="education-meta">
+                                <span class="badge badge-default">Completed</span>
+                                <div class="flex items-center" style="color: var(--muted-foreground); margin-top: 0.5rem;">
+                                    📅 Jan 2009 - Mar 2014
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Successfully finished SSC with a specialization in Business Studies. Gained extensive knowledge in core subjects including Accounting, Management, and Finance. This academic path helped develop a solid platform for future education in the field of business and professional certificates like ACCA.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            🏆 <span style="font-weight: 500; color: var(--primary);">Achievement: GPA (4/4.0)</span>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Key Subjects</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline">Financial Accounting</span>
+                                <span class="badge badge-outline">Management Accounting</span>
+                                <span class="badge badge-outline">Business Law</span>
+                                <span class="badge badge-outline">Economics</span>
+                                <span class="badge badge-outline">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Competencies</h2>
+                <p class="section-description">
+                    Technical expertise and soft skills that make me a valuable finance professional
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 grid-lg-cols-2 skills-grid">
+                <!-- Technical Skills -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title flex items-center gap-4">
+                            <div class="education-icon">📊</div>
+                            Technical Skills
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    📋 Financial Reporting
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    📈 Financial Analysis
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    🧮 Tax Preparation
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    🛡️ Audit Procedures
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    📊 Excel & Spreadsheets
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    📈 Financial Modeling
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title flex items-center gap-4">
+                            <div class="education-icon">🧠</div>
+                            Soft Skills
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="soft-skills-grid">
+                            <div class="soft-skill-item">
+                                🧠 <span class="font-medium">Analytical Thinking</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                🎯 <span class="font-medium">Attention to Detail</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                🧠 <span class="font-medium">Problem Solving</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                👥 <span class="font-medium">Communication</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                🎯 <span class="font-medium">Time Management</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                👥 <span class="font-medium">Teamwork</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title flex items-center gap-4">
+                            <div class="education-icon">🛡️</div>
+                            Certifications
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>Foundation in Accountancy (FIA) - Complete</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>ACCA Applied Knowledge (F1-F3) Completed</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>ACCA Applied Skills (F4-F9) - 4/6 Completed</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>Microsoft Excel Specialist</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>QuickBooks Certified User</span>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div style="width: 0.5rem; height: 0.5rem; background: var(--primary); border-radius: 50%;"></div>
+                                <span>Financial Modeling Certificate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software & Tools -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title flex items-center gap-4">
+                            <div class="education-icon">🧮</div>
+                            Software & Tools
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="subjects-grid">
+                            <span class="badge badge-outline">Microsoft Excel</span>
+                            <span class="badge badge-outline">QuickBooks</span>
+                            <span class="badge badge-outline">Sage</span>
+                            <span class="badge badge-outline">Xero</span>
+                            <span class="badge badge-outline">SAP</span>
+                            <span class="badge badge-outline">Power BI</span>
+                            <span class="badge badge-outline">Tableau</span>
+                            <span class="badge badge-outline">Python (Basic)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-bg-muted">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Projects & Case Studies</h2>
+                <p class="section-description">
+                    Practical applications of accounting and finance knowledge through real-world projects
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 grid-md-cols-2 projects-grid">
+                <!-- Project 1 -->
+                <div class="card project-card">
+                    <div class="card-header">
+                        <div class="project-header">
+                            <div class="project-icon">📈</div>
+                            <span class="badge badge-secondary" style="font-size: 0.75rem;">Academic Project</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: 1.25rem;">Financial Statement Analysis Project</h3>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Comprehensive analysis of a public company's financial statements over 3 years, including ratio analysis, trend analysis, and investment recommendations.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <h4>Key Achievements</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Analyzed 3 years of financial data for Apple Inc.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Created comprehensive ratio analysis dashboard</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Provided investment recommendation with supporting evidence</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Achieved 95% grade for analytical depth</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Skills Applied</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Financial Analysis</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Excel</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Financial Modeling</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Report Writing</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                📄 View Details
+                            </a>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                🔗 Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card project-card">
+                    <div class="card-header">
+                        <div class="project-header">
+                            <div class="project-icon">🧮</div>
+                            <span class="badge badge-secondary" style="font-size: 0.75rem;">Case Study</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: 1.25rem;">Small Business Accounting System Design</h3>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Designed and implemented a complete accounting system for a small retail business, including chart of accounts, bookkeeping procedures, and financial controls.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <h4>Key Achievements</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Designed chart of accounts for retail business</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Created monthly closing procedures</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Implemented segregation of duties controls</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Reduced month-end closing time by 40%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Skills Applied</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Accounting Systems</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Internal Controls</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">QuickBooks</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Process Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                📄 View Details
+                            </a>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                🔗 Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card project-card">
+                    <div class="card-header">
+                        <div class="project-header">
+                            <div class="project-icon">📄</div>
+                            <span class="badge badge-secondary" style="font-size: 0.75rem;">Research Project</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: 1.25rem;">Tax Planning Optimization Study</h3>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Research project on tax planning strategies for small and medium enterprises, including legal tax minimization techniques and compliance requirements.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <h4>Key Achievements</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Researched 15 different tax planning strategies</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Created decision framework for SMEs</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Presented findings to academic panel</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Published in university finance journal</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Skills Applied</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Tax Law</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Research</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Tax Planning</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Compliance</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                📄 View Details
+                            </a>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                🔗 Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="card project-card">
+                    <div class="card-header">
+                        <div class="project-header">
+                            <div class="project-icon">🥧</div>
+                            <span class="badge badge-secondary" style="font-size: 0.75rem;">Academic Project</span>
+                        </div>
+                        <h3 class="card-title" style="font-size: 1.25rem;">Investment Portfolio Analysis</h3>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p style="color: var(--muted-foreground); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Created and analyzed a diversified investment portfolio using modern portfolio theory principles, including risk assessment and performance measurement.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <h4>Key Achievements</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Built portfolio of 20 stocks across 5 sectors</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Applied modern portfolio theory principles</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Achieved 12% simulated annual return</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-dot"></div>
+                                    <span>Created automated rebalancing system</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">Skills Applied</h4>
+                            <div class="subjects-grid">
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Investment Analysis</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Portfolio Management</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Risk Assessment</span>
+                                <span class="badge badge-outline" style="font-size: 0.75rem;">Excel</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                📄 View Details
+                            </a>
+                            <a href="#" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">
+                                🔗 Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Ready to start my career in accounting and finance. Let's discuss opportunities!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 grid-lg-cols-2 contact-grid">
+                <!-- Contact Information -->
+                <div>
+                    <div class="card contact-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Contact Information</h3>
+                        </div>
+                        <div class="card-content">
+                            <a href="mailto:acca.asifiqbal@gmail.com" class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p>acca.asifiqbal@gmail.com</p>
+                                </div>
+                            </a>
+                            
+                            <a href="tel:+8801325409636" class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <p>+88 01325409636</p>
+                                </div>
+                            </a>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h4>Location</h4>
+                                    <p>Dhanmondi 8/A, Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                            
+                            <a href="https://www.linkedin.com/in/asifiqbal-acca/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                                <div class="contact-icon">💼</div>
+                                <div class="contact-details">
+                                    <h4>LinkedIn</h4>
+                                    <p>linkedin.com/in/asifiqbal-acca</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Quick Actions</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <a href="#" class="btn btn-primary btn-lg w-full">
+                                    📥 Download My CV
+                                </a>
+                                <a href="https://www.linkedin.com/in/asifiqbal-acca" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg w-full">
+                                    💼 Connect on LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 class="card-title mb-4">Send a Message</h3>
+                    <form>
+                        <div class="form-grid form-grid-cols-2 mb-4">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="john.doe@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-input" placeholder="Regarding job opportunity...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-textarea" placeholder="Tell me about the opportunity..." rows="6"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-full">
+                            ✉️ Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div>
+                    <h3>Md Asif Iqbal</h3>
+                    <p>
+                        ACCA Student passionate about accounting and finance, 
+                        ready to contribute to your organization's success.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#education" class="footer-link">Education</a>
+                        <a href="#skills" class="footer-link">Skills</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4>Get In Touch</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="mailto:acca.asifiqbal@gmail.com" class="footer-link flex items-center gap-2">
+                            ✉️ acca.asifiqbal@gmail.com
+                        </a>
+                        <a href="https://linkedin.com/in/asifiqbal-acca" target="_blank" rel="noopener noreferrer" class="footer-link flex items-center gap-2">
+                            💼 LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>© 2024 Md Asif Iqbal. All rights reserved.</p>
+                
+                <div class="flex items-center gap-2" style="opacity: 0.6; font-size: 0.875rem;">
+                    <span>Made with</span>
+                    <span style="color: #ef4444;">❤️</span>
+                    <span>for my accounting career</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="mailto:acca.asifiqbal@gmail.com" aria-label="Email">✉️</a>
+                    <a href="https://linkedin.com/in/asifiqbal-acca" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">🔗</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            menuIcon.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    menuIcon.textContent = '☰';
+                }
+            });
+        });
+
+        // Animate progress bars when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressFills = entry.target.querySelectorAll('.progress-fill');
+                    progressFills.forEach(fill => {
+                        const width = fill.style.width;
+                        fill.style.width = '0%';
+                        setTimeout(() => {
+                            fill.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe skills section
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+
+        // Add animation delays to cards
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
 </html>
